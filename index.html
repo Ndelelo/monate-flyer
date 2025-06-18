@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Monate Delicious Flyer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  /* Remove this: overflow: hidden; */
+  background: black;
+}
+
+.flyer-container {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 60px; /* space for footer */
+  z-index: 1;
+}
+
+    video#bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 6vw;
+      font-weight: bold;
+      margin-top: 5vh;
+      animation: fadeInDown 2s ease-in-out;
+      padding: 0 10px;
+    }
+
+    .slideshow {
+      width: 80vw;
+      max-width: 400px;
+      height: 80vw;
+      max-height: 400px;
+      margin: 5vh auto;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      opacity: 0;
+      animation: slideshow 20s infinite;
+    }
+
+    .slideshow img:nth-child(1) { animation-delay: 0s; }
+    .slideshow img:nth-child(2) { animation-delay: 5s; }
+    .slideshow img:nth-child(3) { animation-delay: 10s; }
+    .slideshow img:nth-child(4) { animation-delay: 15s; }
+
+    @keyframes slideshow {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      25% { opacity: 1; }
+      30% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer {
+  text-align: center;
+  font-size: 4vw;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Optional tweak for larger screens */
+@media (min-width: 768px) {
+  .footer {
+    font-size: 1.2rem;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video id="bgVideo" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="ludada.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <div class="flyer-container">
+    <div class="title">😋 Monate Delicious 😋</div>
+
+    <!-- Image Slideshow -->
+    <div class="slideshow">
+      <img src="shonzha1.JPG" alt="Food 1">
+      <img src="shonzha2.JPG" alt="Food 2">
+      <img src="shonzha3.JPG" alt="Food 3">
+      <img src="shonzha4.JPG" alt="Food 4">
+      <img src="shonzha5.JPG" alt="Food 4">
+      <img src="shonzha6.JPG" alt="Food 4">
+    </div>
+
+    <div class="footer">
+    <div class="order-now" style="text-align: center; font-size: 3vw; color: #79735f; font-weight: bold; margin-bottom: 20px;">
+  📦 Place Your Order Now!
+    <div class="price">💰 Price: R50 per parket</div>
+    <div class="contact">Contact:
+    
+  📞 <a href="tel:+27812345678" style="color: #fff; text-decoration: underline;">Call: 081 234 5678</a> |💬 <a href="https://wa.me/27812345678" target="_blank" style="color: #39c90e; text-decoration: underline;">WhatsApp</a> 
+  
+</div>
+  </div>
+</body>
+</html>
